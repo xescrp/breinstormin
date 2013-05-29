@@ -30,9 +30,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AWSSDK, Version=1.5.17.0, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\AWS SDK for .NET\bin\AWSSDK.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.5\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RSS.NET">
+      <HintPath>..\..\..\..\Users\paco\Downloads\oldbreinstormin-master\oldbreinstormin-master\DotNet.Tools\bin\Debug\RSS.NET.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,10 +52,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="amazon\S3Engine.cs" />
+    <Compile Include="cryptography\RijndaelSimple.cs" />
     <Compile Include="log\LogEngine.cs" />
     <Compile Include="log\_Log.cs" />
     <Compile Include="log\_LogCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="random\RandomEngine.cs" />
+    <Compile Include="syndicate\RSSEvents.cs" />
+    <Compile Include="syndicate\RSSPost.cs" />
+    <Compile Include="terminalServer\ClientDisplay.cs" />
+    <Compile Include="terminalServer\ClientProtocolType.cs" />
+    <Compile Include="terminalServer\GroupLazyLoadedProperty.cs" />
+    <Compile Include="terminalServer\IClientDisplay.cs" />
+    <Compile Include="terminalServer\IProtocolStatistics.cs" />
+    <Compile Include="terminalServer\ITerminalServer.cs" />
+    <Compile Include="terminalServer\ITerminalServerHandle.cs" />
+    <Compile Include="terminalServer\ITerminalServicesManager.cs" />
+    <Compile Include="terminalServer\ITerminalServicesProcess.cs" />
+    <Compile Include="terminalServer\ITerminalServicesSession.cs" />
+    <Compile Include="terminalServer\LazyLoadedProperty.cs" />
+    <Compile Include="terminalServer\LocalServerHandle.cs" />
+    <Compile Include="terminalServer\ProtocolStatistics.cs" />
+    <Compile Include="terminalServer\RemoteServerHandle.cs" />
+    <Compile Include="terminalServer\TerminalServer.cs" />
+    <Compile Include="terminalServer\TerminalServicesManager.cs" />
+    <Compile Include="terminalServer\TerminalServicesProcess.cs" />
+    <Compile Include="terminalServer\TerminalServicesSession.cs" />
+    <Compile Include="WIN32\CIM_DataFile.cs" />
+    <Compile Include="WIN32\FileApi.cs" />
+    <Compile Include="WIN32\IWmiAccess.cs" />
+    <Compile Include="WIN32\ProcessApi.cs" />
+    <Compile Include="WIN32\ProcessFileHandleFinder.cs" />
+    <Compile Include="WIN32\Win32Api.cs" />
+    <Compile Include="WIN32\Win32_DiskDrive.cs" />
+    <Compile Include="WIN32\Win32_ImpersonateLoginToken.cs" />
+    <Compile Include="WIN32\Win32_LogicalDisk.cs" />
+    <Compile Include="WIN32\Win32_MapNetworkDrive.cs" />
+    <Compile Include="WIN32\Win32_Process.cs" />
+    <Compile Include="WIN32\Win32_Service.cs" />
+    <Compile Include="WIN32\Win32_WTSSessions.cs" />
+    <Compile Include="WIN32\WmiAccess.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
