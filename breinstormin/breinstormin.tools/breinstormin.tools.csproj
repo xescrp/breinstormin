@@ -44,6 +44,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -79,6 +80,42 @@
     <Compile Include="terminalServer\TerminalServicesManager.cs" />
     <Compile Include="terminalServer\TerminalServicesProcess.cs" />
     <Compile Include="terminalServer\TerminalServicesSession.cs" />
+    <Compile Include="testing\tooltesting.cs" />
+    <Compile Include="web\css\cssReader.cs" />
+    <Compile Include="web\css\CSSParser.cs" />
+    <Compile Include="web\css\CSSRenderer.cs" />
+    <Compile Include="web\css\HSV.cs" />
+    <Compile Include="web\css\HTMLRenderer.cs" />
+    <Compile Include="web\css\Model\Attribute.cs" />
+    <Compile Include="web\css\Model\AttributeOperator.cs" />
+    <Compile Include="web\css\Model\Combinator.cs" />
+    <Compile Include="web\css\Model\CSS.cs" />
+    <Compile Include="web\css\Model\CSSDocument.cs" />
+    <Compile Include="web\css\Model\Declaration.cs" />
+    <Compile Include="web\css\Model\Directive.cs" />
+    <Compile Include="web\css\Model\DirectiveType.cs" />
+    <Compile Include="web\css\Model\Expression.cs" />
+    <Compile Include="web\css\Model\Function.cs" />
+    <Compile Include="web\css\Model\IDeclarationContainer.cs" />
+    <Compile Include="web\css\Model\Import.cs" />
+    <Compile Include="web\css\Model\IRuleSetContainer.cs" />
+    <Compile Include="web\css\Model\ISelectorContainer.cs" />
+    <Compile Include="web\css\Model\Media.cs" />
+    <Compile Include="web\css\Model\MediaTag.cs" />
+    <Compile Include="web\css\Model\Medium.cs" />
+    <Compile Include="web\css\Model\Property.cs" />
+    <Compile Include="web\css\Model\PropertyValue.cs" />
+    <Compile Include="web\css\Model\RuleSet.cs" />
+    <Compile Include="web\css\Model\Selector.cs" />
+    <Compile Include="web\css\Model\SimpleSelector.cs" />
+    <Compile Include="web\css\Model\Tag.cs" />
+    <Compile Include="web\css\Model\TagType.cs" />
+    <Compile Include="web\css\Model\Term.cs" />
+    <Compile Include="web\css\Model\TermType.cs" />
+    <Compile Include="web\css\Model\Unit.cs" />
+    <Compile Include="web\css\Model\ValueType.cs" />
+    <Compile Include="web\css\Parser.cs" />
+    <Compile Include="web\css\Scanner.cs" />
     <Compile Include="WIN32\CIM_DataFile.cs" />
     <Compile Include="WIN32\FileApi.cs" />
     <Compile Include="WIN32\IWmiAccess.cs" />
@@ -97,6 +134,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
