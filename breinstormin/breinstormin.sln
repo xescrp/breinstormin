@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "breinstormin.db", "breinsto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "breinstormin.tools", "breinstormin.tools\breinstormin.tools.csproj", "{5A9BB545-BF3B-4EBA-838F-0166914AD542}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "breinstormin.appdomains", "breinstormin.appdomains\breinstormin.appdomains.csproj", "{B6A85EC3-A062-421C-809E-279D73B0D840}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "breinstormin.wcf", "breinstormin.wcf\breinstormin.wcf.csproj", "{57440EC0-4051-4C82-B408-5986EA0B070D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +23,14 @@ Global
 		{5A9BB545-BF3B-4EBA-838F-0166914AD542}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A9BB545-BF3B-4EBA-838F-0166914AD542}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A9BB545-BF3B-4EBA-838F-0166914AD542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6A85EC3-A062-421C-809E-279D73B0D840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A85EC3-A062-421C-809E-279D73B0D840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A85EC3-A062-421C-809E-279D73B0D840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A85EC3-A062-421C-809E-279D73B0D840}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57440EC0-4051-4C82-B408-5986EA0B070D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57440EC0-4051-4C82-B408-5986EA0B070D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57440EC0-4051-4C82-B408-5986EA0B070D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57440EC0-4051-4C82-B408-5986EA0B070D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
