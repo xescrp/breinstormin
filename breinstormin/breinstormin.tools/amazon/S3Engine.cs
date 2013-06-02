@@ -17,7 +17,7 @@ namespace breinstormin.tools.amazon
 
         public static AmazonS3 GetS3Client()
         {
-            if (string.IsNullOrEmpty(BUCKET_NAME)) { BUCKET_NAME = "elasticbeanstalk-eu-west-1-993712732203"; }
+            if (string.IsNullOrEmpty(BUCKET_NAME)) { BUCKET_NAME = "s3-bucket-name"; }
             System.Collections.Specialized.NameValueCollection appConfig = 
                 System.Configuration.ConfigurationManager.AppSettings;
 
