@@ -38,6 +38,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.5.0.5\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Omu.Drawing">
+      <HintPath>..\..\..\Hostaldog.com\lib\Omu.Drawing.dll</HintPath>
+    </Reference>
     <Reference Include="RSS.NET">
       <HintPath>..\..\..\..\Users\paco\Downloads\oldbreinstormin-master\oldbreinstormin-master\DotNet.Tools\bin\Debug\RSS.NET.dll</HintPath>
     </Reference>
@@ -46,6 +49,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +59,36 @@
   <ItemGroup>
     <Compile Include="amazon\S3Engine.cs" />
     <Compile Include="cryptography\RijndaelSimple.cs" />
+    <Compile Include="googleMaps\Elevation\ElevationRequest.cs" />
+    <Compile Include="googleMaps\Elevation\ElevationResponse.cs" />
+    <Compile Include="googleMaps\Elevation\ElevationResult.cs" />
+    <Compile Include="googleMaps\Elevation\ElevationService.cs" />
+    <Compile Include="googleMaps\Extensions.cs" />
+    <Compile Include="googleMaps\Geocoding\AddressComponent.cs" />
+    <Compile Include="googleMaps\Geocoding\AddressType.cs" />
+    <Compile Include="googleMaps\Geocoding\GeocodingRequest.cs" />
+    <Compile Include="googleMaps\Geocoding\GeocodingResponse.cs" />
+    <Compile Include="googleMaps\Geocoding\GeocodingResult.cs" />
+    <Compile Include="googleMaps\Geocoding\GeocodingService.cs" />
+    <Compile Include="googleMaps\Geocoding\Geometry.cs" />
+    <Compile Include="googleMaps\Geocoding\LocationType.cs" />
+    <Compile Include="googleMaps\Geocoding\Viewport.cs" />
+    <Compile Include="googleMaps\GeographicPosition.cs" />
+    <Compile Include="googleMaps\Http.cs" />
+    <Compile Include="googleMaps\JsonEnumTypeConverter.cs" />
+    <Compile Include="googleMaps\ServiceResponseStatus.cs" />
+    <Compile Include="googleMaps\StaticMaps\StaticMap.cs" />
+    <Compile Include="image\ColorHandler.cs" />
+    <Compile Include="image\Filters\BrightnessFilter.cs" />
+    <Compile Include="image\Filters\ContrastFilter.cs" />
+    <Compile Include="image\Filters\DesaturationFilter.cs" />
+    <Compile Include="image\Filters\GaussianBlurFilter.cs" />
+    <Compile Include="image\Filters\IFilter.cs" />
+    <Compile Include="image\Filters\InvertFilter.cs" />
+    <Compile Include="image\Filters\UnsharpMaskFilter.cs" />
+    <Compile Include="image\ImageMgr.cs" />
+    <Compile Include="image\ImageProcessor.cs" />
+    <Compile Include="image\breinImage.cs" />
     <Compile Include="log\LogEngine.cs" />
     <Compile Include="log\_Log.cs" />
     <Compile Include="log\_LogCollection.cs" />
@@ -134,7 +168,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

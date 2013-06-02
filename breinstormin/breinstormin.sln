@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "breinstormin.appdomains", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "breinstormin.wcf", "breinstormin.wcf\breinstormin.wcf.csproj", "{57440EC0-4051-4C82-B408-5986EA0B070D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "breinstormin.wcf-api.server", "breinstormin.wcf-api.server\breinstormin.wcf-api.server.csproj", "{670694DA-B775-478E-892F-14FCC89797DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{57440EC0-4051-4C82-B408-5986EA0B070D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57440EC0-4051-4C82-B408-5986EA0B070D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57440EC0-4051-4C82-B408-5986EA0B070D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{670694DA-B775-478E-892F-14FCC89797DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670694DA-B775-478E-892F-14FCC89797DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{670694DA-B775-478E-892F-14FCC89797DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{670694DA-B775-478E-892F-14FCC89797DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
