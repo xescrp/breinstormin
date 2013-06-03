@@ -50,6 +50,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +59,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="amazon\S3Engine.cs" />
+    <Compile Include="config\AppConfig.cs" />
+    <Compile Include="config\AppSettings.cs" />
+    <Compile Include="config\Internals\AppSettingsClass.cs" />
+    <Compile Include="config\Test\Testing.cs" />
+    <Compile Include="config\Test\test_config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="config\Test\test_config.Designer.cs">
+      <DependentUpon>test_config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="config\UI\appSettings_Visual_Comparer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="config\UI\appSettings_Visual_Comparer.Designer.cs">
+      <DependentUpon>appSettings_Visual_Comparer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="config\UI\appSettings_Visual_Editor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="config\UI\appSettings_Visual_Editor.Designer.cs">
+      <DependentUpon>appSettings_Visual_Editor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="config\UI\InputBox.cs" />
+    <Compile Include="config\UI\ListViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="cryptography\RijndaelSimple.cs" />
     <Compile Include="googleMaps\Elevation\ElevationRequest.cs" />
     <Compile Include="googleMaps\Elevation\ElevationResponse.cs" />
@@ -115,6 +142,18 @@
     <Compile Include="terminalServer\TerminalServicesProcess.cs" />
     <Compile Include="terminalServer\TerminalServicesSession.cs" />
     <Compile Include="testing\tooltesting.cs" />
+    <Compile Include="ui\dialogs.cs" />
+    <Compile Include="visualstudio\Tests\Testing.cs" />
+    <Compile Include="visualstudio\VSProject.cs" />
+    <Compile Include="visualstudio\VSProjectConfiguration.cs" />
+    <Compile Include="visualstudio\VSProjectInfo.cs" />
+    <Compile Include="visualstudio\VSProjectItem.cs" />
+    <Compile Include="visualstudio\VSProjectType.cs" />
+    <Compile Include="visualstudio\VSProjectTypesDictionary.cs" />
+    <Compile Include="visualstudio\VSProjectWithFileInfo.cs" />
+    <Compile Include="visualstudio\VSSolution.cs" />
+    <Compile Include="visualstudio\VSSolutionFileParser.cs" />
+    <Compile Include="visualstudio\VSSolutionFilesInfo.cs" />
     <Compile Include="web\css\cssReader.cs" />
     <Compile Include="web\css\CSSParser.cs" />
     <Compile Include="web\css\CSSRenderer.cs" />
@@ -166,7 +205,22 @@
     <Compile Include="WIN32\WmiAccess.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="config\Test\Web.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="config\Test\test_config.resx">
+      <DependentUpon>test_config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="config\UI\appSettings_Visual_Comparer.resx">
+      <DependentUpon>appSettings_Visual_Comparer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="config\UI\appSettings_Visual_Editor.resx">
+      <DependentUpon>appSettings_Visual_Editor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="config\UI\ListViewEx.resx">
+      <DependentUpon>ListViewEx.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
