@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{4DE8F82B-866
 		lib\64\ProfilerOBJ.pdb = lib\64\ProfilerOBJ.pdb
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "breinstormin.profiler", "breinstormin.profiler\breinstormin.profiler.csproj", "{F725E8A1-5168-4A32-AF95-13D5851DECDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +109,18 @@ Global
 		{A1BCB61E-359F-46C8-89E1-26CD7E356880}.Release|Win32.Build.0 = Release|Win32
 		{A1BCB61E-359F-46C8-89E1-26CD7E356880}.Release|x64.ActiveCfg = Release|x64
 		{A1BCB61E-359F-46C8-89E1-26CD7E356880}.Release|x64.Build.0 = Release|x64
+		{F725E8A1-5168-4A32-AF95-13D5851DECDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F725E8A1-5168-4A32-AF95-13D5851DECDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F725E8A1-5168-4A32-AF95-13D5851DECDE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F725E8A1-5168-4A32-AF95-13D5851DECDE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F725E8A1-5168-4A32-AF95-13D5851DECDE}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{F725E8A1-5168-4A32-AF95-13D5851DECDE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F725E8A1-5168-4A32-AF95-13D5851DECDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F725E8A1-5168-4A32-AF95-13D5851DECDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F725E8A1-5168-4A32-AF95-13D5851DECDE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F725E8A1-5168-4A32-AF95-13D5851DECDE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F725E8A1-5168-4A32-AF95-13D5851DECDE}.Release|Win32.ActiveCfg = Release|Any CPU
+		{F725E8A1-5168-4A32-AF95-13D5851DECDE}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
