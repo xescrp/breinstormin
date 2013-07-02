@@ -27,8 +27,8 @@ namespace breinstormin.tools.googleMaps.Geocoding
 	/// </summary>
 	public static class GeocodingService
 	{
-		public static readonly Uri ApiUrl = 
-			new Uri("http://maps.google.com/maps/api/geocode/");
+		public static readonly Uri ApiUrl =
+            new Uri("http://maps.googleapis.com/maps/api/geocode/");
 
 		/// <summary>
 		/// Sends the specified request to the Google Maps Geocoding web

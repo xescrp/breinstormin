@@ -9,8 +9,8 @@ namespace breinstormin.tools.testing
     {
         void testcss() 
         {
-            web.css.cssReader reader = 
-                new web.css.cssReader(@"C:\css\estilos.css");
+            web.css.cssReader reader =
+                new web.css.cssReader(@"C:\TFS.GIT\Hostaldog.com\www.hostaldog.com.site\css\estilos.css");
             web.css.Model.CSSDocument doc = reader.cssDocument;
 
             if (doc != null) 
@@ -22,6 +22,8 @@ namespace breinstormin.tools.testing
             }
 
         }
+
+       
 
         void testsblur() 
         {
@@ -55,5 +57,92 @@ namespace breinstormin.tools.testing
                 }
             }
         }
+
+        public void testasm() 
+        {
+            var appDomain = AppDomain.CreateDomain("test", null,
+                new AppDomainSetup
+                {
+                    ConfigurationFile = AppDomain.CurrentDomain.SetupInformation.ConfigurationFile,
+                    ApplicationBase = AppDomain.CurrentDomain.BaseDirectory,
+                    ShadowCopyFiles = "false"
+                });
+            var t = typeof(LoadAssembly);
+
+            //appDomain has no assemblies.
+            var loader = (LoadAssembly)appDomain.CreateInstanceFromAndUnwrap(t.Assembly.Location, t.FullName);
+
+            loader.LoadFromFile(@"C:\Services.NET\Hostaldog.com\WCFHostaldogService\HostalDogs.com.Common.dll");
+
+            //issue appDomain still has no assemblies.
+            Console.WriteLine(loader.GetAssemblies().Length.ToString());
+        }
+
+        public void testgeo() 
+        {
+            googleMaps.Geocoding.GeocodingRequest rq = new googleMaps.Geocoding.GeocodingRequest();
+            rq.Address = "Palma";
+            rq.Language = "ES";
+            rq.Sensor = "true";
+
+            googleMaps.Geocoding.GeocodingResponse rsp = googleMaps.Geocoding.GeocodingService.GetResponse(rq);
+            if (rsp.Status == googleMaps.ServiceResponseStatus.Ok) 
+            {
+                foreach (googleMaps.Geocoding.GeocodingResult rs in rsp.Results) 
+                {
+                    Console.WriteLine(rs.FormattedAddress);
+
+                    foreach (googleMaps.Geocoding.AddressComponent comp in rs.Components) 
+                    {
+                        if (comp.Types[0] == googleMaps.Geocoding.AddressType.Locality) 
+                        {
+                            Console.WriteLine("city: " + comp.LongName);
+                        }
+                        if (comp.Types[0] == googleMaps.Geocoding.AddressType.Country)
+                        {
+                            Console.WriteLine("country: " + comp.LongName);
+                        }
+                        if (comp.Types[0] == googleMaps.Geocoding.AddressType.PostalCode)
+                        {
+                            Console.WriteLine("CP: " + comp.LongName);
+                        }
+                        if (comp.Types[0] == googleMaps.Geocoding.AddressType.AdministrativeAreaLevel1)
+                        {
+                            Console.WriteLine("province: " + comp.LongName);
+                        }
+                    }
+
+                }
+            }
+                
+        }
     }
+
+
+    public class LoadAssembly : MarshalByRefObject
+    {
+        public readonly AppDomain currentDomain;
+        public LoadAssembly()
+        {
+            currentDomain = AppDomain.CurrentDomain;
+        }
+
+
+        public System.Reflection.Assembly[] GetAssemblies() 
+        {
+            return currentDomain.GetAssemblies();
+        }
+
+        public void LoadFromFile(string filePath)
+        {
+            //currentDomain has no assemblies:
+            System.Reflection.Assembly.LoadFrom(filePath);
+            //currentDomain has assemblies:
+
+        }
+    }
+
+    
+
+
 }
