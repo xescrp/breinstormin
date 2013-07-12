@@ -140,6 +140,33 @@ namespace breinstormin.tools.testing
             //currentDomain has assemblies:
 
         }
+
+        public void TestAzure() 
+        {
+            azure.AzureBlobStorageEngine eng = new azure.AzureBlobStorageEngine("@accountname", "keyvalue", "http") ;
+
+            Microsoft.WindowsAzure.Storage.Blob.IListBlobItem[] blobs = eng.GetDataList("images");
+
+            foreach (Microsoft.WindowsAzure.Storage.Blob.IListBlobItem blob in blobs) 
+            {
+                Console.WriteLine(blob.Uri.ToString() + " - " + blob.GetType().ToString());
+                if (typeof(Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob) == blob.GetType()) 
+                {
+                    Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blblob = (Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob)blob;
+                    Console.Write(" [MIME: " + blblob.Properties.ContentType + "]");
+                    if (blblob.Uri.ToString().ToLower().Contains(".jpg") && blblob.Properties.ContentType != "image/jpeg") 
+                    {
+                        blblob.FetchAttributes();
+                        blblob.Properties.ContentType = "image/jpeg";
+                        blblob.SetProperties();
+                        Console.Write("Cambiado mime a : " + blblob.Properties.ContentType + "]");
+                    }
+
+                }
+            }
+
+        }
+        
     }
 
     
