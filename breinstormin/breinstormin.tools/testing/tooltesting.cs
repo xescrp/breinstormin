@@ -23,7 +23,26 @@ namespace breinstormin.tools.testing
 
         }
 
-       
+
+        void testRss() 
+        {
+            string rssurl = "http://hostaldog-blog.azurewebsites.net/?feed=rss2";
+            Uri url = new Uri(rssurl);
+
+            syndicate.RSSEvents rss = new syndicate.RSSEvents(url);
+
+            syndicate.RSSFeed feed = new syndicate.RSSFeed(url);
+
+            Console.WriteLine(rss.getHTMLOutputAll());
+
+            foreach (syndicate.RSSPost post in rss.getPosts()) 
+            {
+                Console.WriteLine(post.Title);
+                Console.WriteLine(post.MediaItemUrl);
+                Console.WriteLine(post.User);
+            
+            }
+        }
 
         void testsblur() 
         {
@@ -143,27 +162,33 @@ namespace breinstormin.tools.testing
 
         public void TestAzure() 
         {
-            azure.AzureBlobStorageEngine eng = new azure.AzureBlobStorageEngine("@accountname", "keyvalue", "http") ;
+            azure.AzureBlobStorageEngine eng = new azure.AzureBlobStorageEngine("hostaldog", 
+                "XpcnoVzn2RyZkfI+8uhILK3mv0aDclGmlwAT+tolsg/r7TeOr5e/i+rDjpXBme0BVfWv1sUfyLvaBceaDvvnMw==", "http");
 
             Microsoft.WindowsAzure.Storage.Blob.IListBlobItem[] blobs = eng.GetDataList("images");
 
             foreach (Microsoft.WindowsAzure.Storage.Blob.IListBlobItem blob in blobs) 
             {
                 Console.WriteLine(blob.Uri.ToString() + " - " + blob.GetType().ToString());
-                if (typeof(Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob) == blob.GetType()) 
-                {
-                    Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blblob = (Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob)blob;
-                    Console.Write(" [MIME: " + blblob.Properties.ContentType + "]");
-                    if (blblob.Uri.ToString().ToLower().Contains(".jpg") && blblob.Properties.ContentType != "image/jpeg") 
-                    {
-                        blblob.FetchAttributes();
-                        blblob.Properties.ContentType = "image/jpeg";
-                        blblob.SetProperties();
-                        Console.Write("Cambiado mime a : " + blblob.Properties.ContentType + "]");
-                    }
-
-                }
+                //if (typeof(Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob) == blob.GetType()) 
+                //{
+                //    Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blblob = (Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob)blob;
+                //    Console.Write(" [MIME: " + blblob.Properties.ContentType + "]");
+                //    if (blblob.Uri.ToString().ToLower().Contains(".jpg") && blblob.Properties.ContentType != "image/jpeg") 
+                //    {
+                //        blblob.FetchAttributes();
+                //        blblob.Properties.ContentType = "image/jpeg";
+                //        blblob.SetProperties();
+                //        Console.Write("Cambiado mime a : " + blblob.Properties.ContentType + "]");
+    //            //    }
+    //             <add key="AzureAccountName" value="hostaldog"/>
+    //<add key="AzureAccountKey" value="XpcnoVzn2RyZkfI+8uhILK3mv0aDclGmlwAT+tolsg/r7TeOr5e/i+rDjpXBme0BVfWv1sUfyLvaBceaDvvnMw=="/>
+    //            //}
             }
+            string guid = Guid.NewGuid().ToString();
+            Console.WriteLine("Updloading ... " + guid);
+            eng.UploadData(new System.IO.FileStream(@"c:\temp\ab3f4428-856b-4660-8979-5542fa16547e.jpg", System.IO.FileMode.Open),
+                "images", guid + ".jpg", "image/jpeg");
 
         }
         

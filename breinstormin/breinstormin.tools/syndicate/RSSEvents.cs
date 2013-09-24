@@ -87,11 +87,17 @@ namespace breinstormin.tools.syndicate
         {
             rssfile = filepath;
             rss = new Rss.RssFeed();
+            
             if (!System.IO.File.Exists(rssfile)) 
             {
                 throw new Exception("El archivo indicado para sindicacion no existe o no es correcto.");
             }
             rss = Rss.RssFeed.Read(rssfile);
+        }
+
+        public RSSEvents(Uri url) 
+        {
+            rss = Rss.RssFeed.Read(url.ToString());
         }
 
         public RSSEvents(string channelDescription, string channelTittle, string webmaster) 

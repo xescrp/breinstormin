@@ -51,6 +51,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -125,6 +127,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="random\RandomEngine.cs" />
     <Compile Include="syndicate\RSSEvents.cs" />
+    <Compile Include="syndicate\RSSFeed.cs" />
     <Compile Include="syndicate\RSSPost.cs" />
     <Compile Include="terminalServer\ClientDisplay.cs" />
     <Compile Include="terminalServer\ClientProtocolType.cs" />

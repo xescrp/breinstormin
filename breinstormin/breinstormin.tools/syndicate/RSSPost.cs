@@ -14,6 +14,10 @@ namespace breinstormin.tools.syndicate
         public DateTime Date;
         public List<string> Comments;
 
+        public string MediaItemUrl;
+        public string MediaType;
+        public int MediaLenght;
+
         public RSSPost()
         {
 
@@ -21,6 +25,13 @@ namespace breinstormin.tools.syndicate
 
         public RSSPost(Rss.RssItem rssitem)
         {
+            if (rssitem.Enclosure != null)
+            {
+                MediaItemUrl = rssitem.Enclosure.Url.ToString();
+                MediaType = rssitem.Enclosure.Type;
+                MediaLenght = rssitem.Enclosure.Length;
+            }
+
             Title = rssitem.Title;
             Content = rssitem.Description;
             User = rssitem.Author;
