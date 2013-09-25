@@ -10,6 +10,8 @@ namespace breinstormin.tools.syndicate
     {
         public string Title;
         public string Content;
+        public string ContentEncoded;
+        public string Url;
         public string User;
         public DateTime Date;
         public List<string> Comments;

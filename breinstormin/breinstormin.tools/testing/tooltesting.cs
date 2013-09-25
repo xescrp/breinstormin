@@ -35,12 +35,18 @@ namespace breinstormin.tools.testing
 
             Console.WriteLine(rss.getHTMLOutputAll());
 
-            foreach (syndicate.RSSPost post in rss.getPosts()) 
+            foreach (syndicate.RSSPost post in feed.RSSPosts) 
             {
+                Console.WriteLine("******************************************************************");
+                Console.Write(post.ContentEncoded);
                 Console.WriteLine(post.Title);
                 Console.WriteLine(post.MediaItemUrl);
                 Console.WriteLine(post.User);
-            
+                Console.Write(post.Content);
+                Console.WriteLine("");
+                Console.Write(post.ContentEncoded);
+                Console.WriteLine("");
+                Console.WriteLine("******************************************************************");
             }
         }
 
